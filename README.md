@@ -1,6 +1,14 @@
 # no-sleep-linux
 A small application which runs in the background and prevents the pc from going sleep by moving the pointer every couple minutes
 
+First, You should install Xlib/X11 library which exposes apis for input and output devices by running this command "You Will be asked for your password":
+sudo apt install libx11-dev
+
+Second, you can use the provided built executable to run this awesome tool and it will move the pointer every two minutes to prevent sleep.
+if you wanted to change the duration, you can adjust that is the source code in the usleep function which takes the number of microseconds between every two pauses, and then build the whole file and don't forget to link X11 libraries.
+You can do that by running this commands
+g++ -c main.cpp
+g++ -o nosleep main.o -X11
 
 
 I had an issue that i most of the time needed (and relayed on) the fact that my laptop is going to sleep if i left it for 5 minutes without any movement, but some time and occasionally i didn't need that, especially when i am studying or reading on my laptop.

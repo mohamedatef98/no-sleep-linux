@@ -15,7 +15,8 @@ int main() {
     bool res;
     int x = 10;
     while (1) {
-        usleep(5000000 * 60);
+        usleep(3000000 * 60);
+	//cout << ++i << endl;
         res = XQueryPointer(display,rootWindow,&windowReturned,&windowReturned,&rootX,&rootY,&winX,&winY,&mask);
         XWarpPointer(display, None, rootWindow, 0, 0, 0, 0, rootX, rootY+10);
         res = XQueryPointer(display,rootWindow,&windowReturned,&windowReturned,&rootX,&rootY,&winX,&winY,&mask);
